@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-900 text-gray-200 text-base;
+}
+
+.button-link {
+    @apply mt-8 py-1 border-b-2 border-dotted text-sm font-semibold uppercase hover:border-solid focus:outline-none;
+}
