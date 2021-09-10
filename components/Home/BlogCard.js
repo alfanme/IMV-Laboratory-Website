@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Thumbnail from '../public/blog-thumbnail.webp';
+import Thumbnail from '../../public/blog-thumbnail.webp';
 
 export default function BlogCard() {
     return (
-        <div className='h-full bg-gray-800 rounded-xl shadow-2xl'>
+        <div className='h-full bg-white rounded-xl ring-1 ring-gray-200 hover:ring-0 hover:shadow-2xl ease-linear duration-300'>
             <div className='h-56 relative'>
                 <Image
                     src={Thumbnail}
@@ -23,7 +23,9 @@ export default function BlogCard() {
                     voluptate accusantium vero maxime temporibus accusamus
                     repudiandae nisi, illum quibusdam!
                 </p>
-                <button className='self-end button-link'>Read more</button>
+                <button className='self-end button-link border-gray-900'>
+                    Read more
+                </button>
             </div>
         </div>
     );
