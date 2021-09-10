@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { supabase } from '../utils/supabaseClient';
 import { useRouter } from 'next/router';
+import { data } from 'autoprefixer';
 
 const ModalAlert = ({ header, body, method, danger }) => {
     return (
@@ -60,17 +61,33 @@ const FormWebinar = () => {
         if (fullname && email && phone && status && organization) {
             try {
                 setLoading(true);
-                const { data, error } = await supabase
+
+                const { data: allData, error: errorAllData } = await supabase
                     .from('webinar_participants')
-                    .insert([participantData]);
-                if (error) alert(error.message);
-                if (data) {
-                    await setModalHeader('Selamat! 🎉');
+                    .select('email')
+                    .match({ email: email });
+
+                if (errorAllData) console.log(errorAllData);
+                if ((await allData.length) !== 0) {
+                    await setModalHeader('Gagal! 😓');
                     await setModalBody(
-                        'Kamu telah terdaftar pada acara webinar IMV Laboratory.'
+                        'Email yang kamu gunakan sudah terdafatar.'
                     );
-                    await setModalDanger(false);
+                    await setModalDanger(true);
                     await setShowModal(true);
+                } else {
+                    const { data, error } = await supabase
+                        .from('webinar_participants')
+                        .insert([participantData]);
+                    if (error) alert(error.message);
+                    if (data) {
+                        await setModalHeader('Selamat! 🎉');
+                        await setModalBody(
+                            'Kamu telah terdaftar pada acara webinar IMV Laboratory.'
+                        );
+                        await setModalDanger(false);
+                        await setShowModal(true);
+                    }
                 }
             } finally {
                 setLoading(false);
