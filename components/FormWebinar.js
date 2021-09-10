@@ -9,6 +9,8 @@ const FormWebinar = () => {
     const [status, setStatus] = useState('');
     const [organization, setOrganization] = useState('');
 
+    const [loading, setLoading] = useState(false);
+
     const handleRegisterWebinar = async () => {
         const participantData = {
             fullname,
@@ -18,11 +20,25 @@ const FormWebinar = () => {
             organization,
             attendance: false,
         };
-        const { data, error } = await supabase
-            .from('webinar_participants')
-            .insert([participantData]);
-        if (error) alert(error.message);
-        if (data) await console.log(data);
+
+        if (fullname && email && phone && status && organization) {
+            try {
+                setLoading(true);
+                const { data, error } = await supabase
+                    .from('webinar_participants')
+                    .insert([participantData]);
+                if (error) alert(error.message);
+                if (data) {
+                    await alert(
+                        `${fullname}, selamat kamu sudah terdaftar pada Webinar Data Science IMV Laboratory!`
+                    );
+                }
+            } finally {
+                setLoading(false);
+            }
+        } else {
+            alert('Semua data wajib diisi!');
+        }
     };
 
     const inputClass =
@@ -31,7 +47,9 @@ const FormWebinar = () => {
     return (
         <div
             id='register'
-            className='w-full p-8 rounded-xl bg-white ring-1 ring-gray-200'>
+            className={`w-full p-8 rounded-xl bg-white ring-1 ring-gray-200 ${
+                loading && 'animate-pulse'
+            }`}>
             <h2 className='mt-2 mb-8 text-2xl font-bold text-center'>
                 Yuk, ikutan webinarnya 👇🏻
             </h2>
@@ -43,6 +61,7 @@ const FormWebinar = () => {
                 onChange={e => setFullname(e.target.value)}
                 type='text'
                 className={inputClass}
+                required
             />
             <label htmlFor='email' className={labelClass}>
                 Alamat email
@@ -52,6 +71,7 @@ const FormWebinar = () => {
                 onChange={e => setEmail(e.target.value)}
                 type='email'
                 className={inputClass}
+                required
             />
             <label htmlFor='phone' className={labelClass}>
                 Nomor HP
@@ -61,12 +81,14 @@ const FormWebinar = () => {
                 onChange={e => setPhone(e.target.value)}
                 type='phone'
                 className={inputClass}
+                required
             />
             <label htmlFor='status' className={labelClass}>
                 Status
             </label>
             <div className='relative'>
                 <select
+                    required
                     id='status'
                     onChange={e => setStatus(e.target.value)}
                     className={`${inputClass} appearance-none cursor-pointer`}>
@@ -85,10 +107,11 @@ const FormWebinar = () => {
                 onChange={e => setOrganization(e.target.value)}
                 type='text'
                 className={inputClass}
+                required
             />
             <button
                 onClick={handleRegisterWebinar}
-                className='w-full mt-2 px-4 h-12 rounded-lg text-white bg-blue-500 hover:bg-blue-700 focus:outline-none'>
+                className='flex justify-center items-center gap-2 w-full mt-2 px-4 h-12 rounded-lg text-white bg-blue-500 hover:bg-blue-700 focus:outline-none'>
                 <p className='uppercase text-center text-sm font-medium tracking-wide'>
                     DAFTARKAN SAYA
                 </p>
