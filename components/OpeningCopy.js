@@ -24,7 +24,7 @@ export default function OpeningCopy() {
                 <span className='font-semibold text-blue-500'>
                     Data Science
                 </span>{' '}
-                dikehidupan sehari-hari dan gimana sih rasanya jadi{' '}
+                di kehidupan sehari-hari dan gimana sih rasanya jadi{' '}
                 <span className='font-semibold text-blue-500'>
                     Data Scientist
                 </span>{' '}
