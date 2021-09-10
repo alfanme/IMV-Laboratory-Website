@@ -7,7 +7,7 @@ export default function CountDown() {
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-        const eventDate = new Date('Sep 25, 2021 09:30:00 GMT+0700');
+        const eventDate = new Date('Sep 25, 2021 9:30:00 GMT+0700');
 
         const counter = setInterval(() => {
             let now = new Date().getTime('GMT+0700');
@@ -37,20 +37,28 @@ export default function CountDown() {
             <h1 className='text-2xl font-bold mb-8'>
                 Webinar akan dimulai dalam:
             </h1>
-            <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
-                <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                    {days} hari
-                </p>
-                <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                    {hours} jam
-                </p>
-                <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                    {minutes} menit
-                </p>
-                <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                    {seconds} detik
-                </p>
-            </div>
+            {days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0 ? (
+                <div className='p-8 rounded-lg text-pink-500 bg-pink-100'>
+                    <p className='text-2xl font-bold'>
+                        Masa pendaftaran berakhir :(
+                    </p>
+                </div>
+            ) : (
+                <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
+                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
+                        {days} hari
+                    </p>
+                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
+                        {hours} jam
+                    </p>
+                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
+                        {minutes} menit
+                    </p>
+                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
+                        {seconds} detik
+                    </p>
+                </div>
+            )}
         </div>
     );
 }
