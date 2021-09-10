@@ -1,15 +1,51 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { supabase } from '../utils/supabaseClient';
+import { useRouter } from 'next/router';
+
+const ModalAlert = ({ header, body, method, danger }) => {
+    return (
+        <div className='fixed top-0 bottom-0 right-0 left-0 z-50 flex justify-center items-center bg-black bg-opacity-25'>
+            <div className='flex flex-col w-80 px-8 py-8 rounded-xl bg-white'>
+                <h1
+                    className={`mb-4 text-2xl font-bold text-blue-500 ${
+                        danger && 'text-red-500'
+                    }`}>
+                    {header}
+                </h1>
+                <p className='mb-8'>{body}</p>
+                <button
+                    onClick={method}
+                    className={`ml-auto -mr-4 -mb-4 px-6 h-10 rounded-lg text-white uppercase text-sm font-semibold bg-blue-500 ${
+                        danger && 'bg-red-500'
+                    } focus:outline-none`}>
+                    OK
+                </button>
+            </div>
+        </div>
+    );
+};
 
 const FormWebinar = () => {
+    const router = useRouter();
+
     const [fullname, setFullname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [status, setStatus] = useState('');
     const [organization, setOrganization] = useState('');
+    const [showModal, setShowModal] = useState(false);
+    const [modalHeader, setModalHeader] = useState('');
+    const [modalBody, setModalBody] = useState('');
+    const [modalDanger, setModalDanger] = useState(false);
 
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        showModal
+            ? (document.body.style.overflow = 'hidden')
+            : (document.body.style.overflow = 'auto');
+    }, [showModal]);
 
     const handleRegisterWebinar = async () => {
         const participantData = {
@@ -29,15 +65,21 @@ const FormWebinar = () => {
                     .insert([participantData]);
                 if (error) alert(error.message);
                 if (data) {
-                    await alert(
-                        `${fullname}, selamat kamu sudah terdaftar pada Webinar Data Science IMV Laboratory!`
+                    await setModalHeader('Selamat! 🎉');
+                    await setModalBody(
+                        'Kamu telah terdaftar pada acara webinar IMV Laboratory.'
                     );
+                    await setModalDanger(false);
+                    await setShowModal(true);
                 }
             } finally {
                 setLoading(false);
             }
         } else {
-            alert('Semua data wajib diisi!');
+            setModalHeader('Gagal! 😓');
+            setModalBody('Semua data wajib diisi.');
+            setModalDanger(true);
+            setShowModal(true);
         }
     };
 
@@ -116,6 +158,21 @@ const FormWebinar = () => {
                     DAFTARKAN SAYA
                 </p>
             </button>
+            {showModal && (
+                <ModalAlert
+                    header={modalHeader}
+                    body={modalBody}
+                    method={
+                        modalDanger
+                            ? () => setShowModal(false)
+                            : () => {
+                                  setShowModal(false);
+                                  router.push('/');
+                              }
+                    }
+                    danger={modalDanger}
+                />
+            )}
         </div>
     );
 };
