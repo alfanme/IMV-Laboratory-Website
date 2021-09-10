@@ -72,7 +72,7 @@ const webinar = () => {
                         imageURL='/aya.jpeg'
                         name='Agniya Tazkiya Aulia'
                         position='S1 Teknik Telekomunikasi di Telkom University'
-                        otherDescription='Project Manajer di IMV Laboratory'
+                        otherDescription='Project Manager di IMV Laboratory'
                     />
                 </div>
                 <BenefitWebinar />

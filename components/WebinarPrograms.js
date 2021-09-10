@@ -28,7 +28,7 @@ export default function WebinarPrograms() {
                     <GiftIcon className='w-32 h-32 text-blue-300 mb-2' />
                     <p className='font-semibold text-lg'>Penawaran Spesial</p>
                     <p className='text-sm mt-2 text-gray-500'>
-                        Penawaran khusus bagi kamu yang ingin belajat lebih
+                        Penawaran khusus bagi kamu yang ingin belajar lebih
                         lanjut melalui pelatihan IMV Laboratory.
                     </p>
                 </div>
