@@ -38,7 +38,7 @@ export default function Profile() {
                     src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2749320522166!2d107.62747611456251!3d-6.976852970256606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9194df662b7%3A0x19c06868b3c34800!2sIMV%20LABORATORY!5e0!3m2!1sen!2sid!4v1624265477101!5m2!1sen!2sid'
                     style={{ border: 0, width: '100%', height: '100%' }}
                     className='rounded-xl shadow-2xl'
-                    allowfullscreen=''
+                    allowFullScreen=''
                     loading='lazy'></iframe>
             </div>
         </div>
