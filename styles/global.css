@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    @apply w-screen bg-white text-gray-900 text-base overflow-hidden;
+    @apply bg-white text-gray-900 text-base;
 }
 
 .button-link {
