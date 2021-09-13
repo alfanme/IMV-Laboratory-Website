@@ -1,9 +1,10 @@
 import Image from 'next/image';
 
 const imagePaths = [
+    '/medpart_fix/bem.png',
     '/medpart_fix/logo-hmtt.png',
-    '/medpart_fix/fisdas-logo.png',
     '/medpart_fix/logo-daskom-potrait.png',
+    '/medpart_fix/fisdas-logo.png',
     '/medpart_fix/yot-tangerang.png',
 ];
 
