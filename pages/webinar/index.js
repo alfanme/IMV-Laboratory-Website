@@ -48,9 +48,9 @@ const webinar = () => {
                 />
             </div>
 
-            <p className='-my-8 text-sm font-bold uppercase px-4 py-2 rounded-full text-blue-500 bg-blue-100'>
-                Webinar
-            </p>
+            <div className='flex justify-center items-center -mt-8 -mb-12 px-4 py-2 rounded-full text-blue-500 bg-blue-100'>
+                <p className='text-sm font-bold uppercase'>Webinar</p>
+            </div>
 
             <div>
                 <h1 className='-mt-8 py-1 text-5xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
