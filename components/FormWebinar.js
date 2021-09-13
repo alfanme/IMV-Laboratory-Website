@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { supabase } from '../utils/supabaseClient';
 import { useRouter } from 'next/router';
-import { data } from 'autoprefixer';
 
 const ModalAlert = ({ header, body, method, danger }) => {
     return (
@@ -39,6 +38,7 @@ const FormWebinar = () => {
     const [modalHeader, setModalHeader] = useState('');
     const [modalBody, setModalBody] = useState('');
     const [modalDanger, setModalDanger] = useState(false);
+    const [method, setMethod] = useState(() => () => setShowModal(false));
 
     const [loading, setLoading] = useState(false);
 
@@ -47,6 +47,17 @@ const FormWebinar = () => {
             ? (document.body.style.overflow = 'hidden')
             : (document.body.style.overflow = 'auto');
     }, [showModal]);
+
+    const redirectAfterRegistered = () => {
+        setShowModal(false);
+        router.push({
+            pathname: '/webinar/register-success',
+            query: {
+                fullname,
+                success: true,
+            },
+        });
+    };
 
     const handleRegisterWebinar = async () => {
         const participantData = {
@@ -64,29 +75,32 @@ const FormWebinar = () => {
 
                 const { data: allData, error: errorAllData } = await supabase
                     .from('webinar_participants')
-                    .select('email')
+                    .select('fullname, email')
                     .match({ email: email });
 
                 if (errorAllData) console.log(errorAllData);
                 if ((await allData.length) !== 0) {
-                    await setModalHeader('Gagal! 😓');
+                    await setFullname(allData.fullname);
+                    await setModalHeader(`Halo, ${fullname} 👋🏻`);
                     await setModalBody(
-                        'Email yang kamu gunakan sudah terdafatar.'
+                        'Kamu sudah terdafatar pada webinar IMV Laboratory kok. Klik OK untuk bergabung ke grup Whatsapp webinar ya...'
                     );
-                    await setModalDanger(true);
+                    await setModalDanger(false);
                     await setShowModal(true);
+                    await setMethod(() => redirectAfterRegistered);
                 } else {
                     const { data, error } = await supabase
                         .from('webinar_participants')
                         .insert([participantData]);
                     if (error) alert(error.message);
                     if (data) {
-                        await setModalHeader('Selamat! 🎉');
+                        await setModalHeader(`Selamat, ${fullname}! 🎉`);
                         await setModalBody(
-                            'Kamu telah terdaftar pada acara webinar IMV Laboratory.'
+                            'Kamu berhasil mendaftarkan diri pada acara webinar IMV Laboratory. Klik OK untuk bergabung ke grup Whatsapp webinar ya...'
                         );
                         await setModalDanger(false);
                         await setShowModal(true);
+                        await setMethod(() => redirectAfterRegistered);
                     }
                 }
             } finally {
@@ -97,6 +111,7 @@ const FormWebinar = () => {
             setModalBody('Semua data wajib diisi.');
             setModalDanger(true);
             setShowModal(true);
+            setMethod(() => () => setShowModal(false));
         }
     };
 
@@ -179,14 +194,7 @@ const FormWebinar = () => {
                 <ModalAlert
                     header={modalHeader}
                     body={modalBody}
-                    method={
-                        modalDanger
-                            ? () => setShowModal(false)
-                            : () => {
-                                  setShowModal(false);
-                                  router.push('/');
-                              }
-                    }
+                    method={method}
                     danger={modalDanger}
                 />
             )}
