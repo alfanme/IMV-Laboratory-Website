@@ -121,7 +121,7 @@ const FormWebinar = () => {
     return (
         <div
             id='register'
-            className={`w-full p-8 rounded-xl bg-white ring-1 ring-gray-200 ${
+            className={`w-full p-8 rounded-xl bg-white shadow-lg ${
                 loading && 'animate-pulse'
             }`}>
             <h2 className='mt-2 mb-8 text-2xl font-bold text-center'>

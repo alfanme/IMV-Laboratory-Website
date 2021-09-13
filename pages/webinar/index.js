@@ -100,7 +100,7 @@ const webinar = () => {
             <section className='flex flex-col items-center'>
                 <button
                     onClick={scrollToTop}
-                    className='mt-16 p-4 rounded-full bg-white ring-1 ring-gray-200 hover:shadow-xl hover:ring-0 ease-linear duration-300 focus:outline-none'>
+                    className='mt-16 p-4 rounded-full bg-white shadow-lg hover:shadow-xl hover:ring-0 ease-linear duration-300 focus:outline-none'>
                     <ArrowUpIcon className='w-6 h-6 text-gray-900' />
                 </button>
                 <p className='mt-4 text-sm'>Kembali ke atas</p>

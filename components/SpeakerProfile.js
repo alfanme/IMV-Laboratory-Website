@@ -22,12 +22,8 @@ export default function SpeakerProfile({
 
             <div className='mt-4 text-center'>
                 <p className='text-lg font-bold'>{name}</p>
-                <p className='text-sm font-semibold text-blue-500'>
-                    {position}
-                </p>
-                <p className='text-sm italic text-gray-400'>
-                    {otherDescription}
-                </p>
+                <p className='font-semibold text-blue-500'>{position}</p>
+                <p className='italic text-gray-400'>{otherDescription}</p>
             </div>
         </div>
     );

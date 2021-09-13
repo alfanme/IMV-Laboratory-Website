@@ -33,7 +33,7 @@ export default function CountDown() {
     }, []);
 
     return (
-        <div className='text-center'>
+        <div className='text-center w-full'>
             <h1 className='text-2xl font-bold mb-8'>
                 Webinar akan dimulai dalam:
             </h1>
@@ -45,18 +45,26 @@ export default function CountDown() {
                 </div>
             ) : (
                 <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
-                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                        {days} hari
-                    </p>
-                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                        {hours} jam
-                    </p>
-                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                        {minutes} menit
-                    </p>
-                    <p className='w-full md:w-32 py-4 rounded-lg bg-pink-100 text-pink-500 text-2xl font-bold'>
-                        {seconds} detik
-                    </p>
+                    <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
+                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                            {days} hari
+                        </p>
+                    </div>
+                    <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
+                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                            {hours} jam
+                        </p>
+                    </div>
+                    <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
+                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                            {minutes} menit
+                        </p>
+                    </div>
+                    <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
+                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                            {seconds} detik
+                        </p>
+                    </div>
                 </div>
             )}
         </div>

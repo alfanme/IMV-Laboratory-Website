@@ -1,7 +1,7 @@
 import {
     CalendarIcon,
     ClockIcon,
-    LocationMarkerIcon,
+    VideoCameraIcon,
 } from '@heroicons/react/solid';
 import { useRouter } from 'next/router';
 
@@ -13,22 +13,22 @@ export default function EventSchedule() {
             <h1 className='mb-8 text-2xl font-bold'>
                 Pastikan jangan sampai ketinggalan acaranya!
             </h1>
-            <div className='flex flex-col gap-y-2 px-12 py-8 rounded-lg text-lg text-gray-500 bg-yellow-100'>
-                <div className='flex items-center gap-x-2'>
-                    <CalendarIcon className='w-6 h-6' />
-                    <p>Sabtu, 25 September 2021</p>
+            <div className='flex flex-col gap-y-4 px-12 py-8 rounded-lg text-lg bg-white shadow-lg'>
+                <div className='flex items-center gap-x-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                    <CalendarIcon className='w-8 h-8 text-blue-500' />
+                    <p className='text-lg'>Sabtu, 25 September 2021</p>
                 </div>
-                <div className='flex items-center gap-x-2'>
-                    <ClockIcon className='w-6 h-6' />
-                    <p>Pukul 09.30 - 12.00 WIB</p>
+                <div className='flex items-center gap-x-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                    <ClockIcon className='w-8 h-8 text-blue-500' />
+                    <p className='text-lg'>Pukul 09.30 - 12.00 WIB</p>
                 </div>
-                <div className='flex items-center gap-x-2'>
-                    <LocationMarkerIcon className='w-6 h-6' />
+                <div className='flex items-center gap-x-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                    <VideoCameraIcon className='w-8 h-8 text-blue-500' />
 
-                    <p>Zoom Meeting</p>
+                    <p className='text-lg'>Zoom Meeting</p>
                     <button
                         onClick={() => router.push('#register')}
-                        className='px-2 py-1 rounded-md text-sm font-semibold text-white bg-yellow-500 focus:outline-none'>
+                        className='px-2 py-1 rounded-md text-sm font-semibold text-white bg-pink-500 focus:outline-none'>
                         Dapatkan link
                     </button>
                 </div>
