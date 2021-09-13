@@ -30,6 +30,7 @@ const webinar = () => {
             <Head>
                 <title>IMV Data Science Webinar</title>
             </Head>
+
             <Bubble className='absolute -top-10 -left-20 w-40 h-40 border-[2em] border-pink-50' />
             <Bubble className='absolute top-[5%] -right-32 w-60 h-60 border-[3em] border-blue-100' />
             <Bubble className='absolute -bottom-20 -right-20 w-80 h-80 border-[4em] border-yellow-100' />
@@ -46,6 +47,10 @@ const webinar = () => {
                     alt='IMV Logo'
                 />
             </div>
+
+            <p className='-my-8 text-sm font-bold uppercase px-4 py-2 rounded-full text-blue-500 bg-blue-100'>
+                Webinar
+            </p>
 
             <div>
                 <h1 className='-mt-8 py-1 text-5xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
