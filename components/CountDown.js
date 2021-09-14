@@ -46,22 +46,22 @@ export default function CountDown() {
             ) : (
                 <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
                     <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
-                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                        <p className='text-3xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
                             {days} hari
                         </p>
                     </div>
                     <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
-                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                        <p className='text-3xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
                             {hours} jam
                         </p>
                     </div>
                     <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
-                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                        <p className='text-3xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
                             {minutes} menit
                         </p>
                     </div>
                     <div className='w-full p-4 rounded-lg bg-white shadow-lg'>
-                        <p className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                        <p className='text-3xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
                             {seconds} detik
                         </p>
                     </div>
