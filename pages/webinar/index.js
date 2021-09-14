@@ -10,6 +10,7 @@ import BenefitWebinar from '../../components/BenefitWebinar';
 import SpeakerProfile from '../../components/SpeakerProfile';
 import OpeningCopy from '../../components/OpeningCopy';
 import MediaPartners from '../../components/MediaPartners';
+import SupportedBy from '../../components/SupportedBy';
 
 const Bubble = ({ className }) => {
     return <div className={`z-[-99] rounded-full ${className}`}></div>;
@@ -53,8 +54,8 @@ const webinar = () => {
             </div>
 
             <div>
-                <h1 className='-mt-8 py-1 text-5xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
-                    "Data Science nggak penting!"
+                <h1 className='-mt-8 py-1 text-4xl md:text-5xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
+                    Data Science nggak penting!
                 </h1>
                 <h2 className='mt-4 text-2xl text-center font-bold '>
                     Benar nggak sih?
@@ -67,14 +68,20 @@ const webinar = () => {
                 <SpeakerProfile
                     imageURL='/abdan.jpg'
                     name='Muhammad Abdan Mulia'
-                    position='Data Scientist di Telkom Indonesia'
-                    otherDescription='Ex. AI & Software Engineer di Nodeflux'
+                    position='Data Scientist'
+                    otherDescription='Telkom Indonesia'
                 />
                 <SpeakerProfile
                     imageURL='/lilian.jpeg'
                     name='Lilian Tjong'
-                    position='Lead Data Scientist di SayurBox'
-                    otherDescription='Ex. Senior Data Scientist di Tokopedia'
+                    position='Lead Data Scientist'
+                    otherDescription='SayurBox'
+                />
+                <SpeakerProfile
+                    imageURL='/mursil.jpeg'
+                    name='Mursil Shadruddin Afkar'
+                    position='Senior Data Scientist'
+                    otherDescription='Tokopedia'
                 />
             </section>
 
@@ -88,18 +95,28 @@ const webinar = () => {
                         <br />
                         akan dipandu oleh:
                     </h1>
-                    <SpeakerProfile
-                        imageURL='/aya.jpeg'
-                        name='Agniya Tazkiya Aulia'
-                        position='S1 Teknik Telekomunikasi di Telkom University'
-                        otherDescription='Project Manager di IMV Laboratory'
-                    />
+                    <div className='flex flex-col md:flex-row justify-center gap-16'>
+                        <SpeakerProfile
+                            imageURL='/iky.jpg'
+                            name='M. Khairul Rizki'
+                            position='Moderator'
+                            otherDescription='IMV Laboratory'
+                        />
+                        <SpeakerProfile
+                            imageURL='/aya.jpeg'
+                            name='Agniya Tazkiya Aulia'
+                            position='Master of Ceremony'
+                            otherDescription='IMV Laboratory'
+                        />
+                    </div>
                 </div>
             </section>
 
             <BenefitWebinar />
 
             <FormWebinar />
+
+            <SupportedBy />
 
             <MediaPartners />
             <section className='flex flex-col items-center'>

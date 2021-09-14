@@ -30,7 +30,7 @@ export default function BenefitWebinar() {
                 </div>
                 <div className='flex flex-col flex-1 min-w-[15em] md:max-w-[20em] items-center px-8 md:px-0'>
                     <BadgeCheckIcon className='w-32 h-32 text-blue-300 mb-2' />
-                    <p className='font-bold text-lg'>E-Sertifikat</p>
+                    <p className='font-bold text-lg'>E-Certificate</p>
                     <p className='mt-2 text-gray-500'>
                         Bukti pengalaman mengikuti webinar yang bisa kamu
                         masukkan ke CV.

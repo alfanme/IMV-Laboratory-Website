@@ -10,11 +10,14 @@ export default function OpeningCopy() {
             </h2>
             <p className='text-lg'>
                 <span className='font-semibold text-blue-500'>
-                    Muhammad Abdan Mulia
+                    Muhammad Abdan Mulia,
+                </span>{' '}
+                <span className='font-semibold text-blue-500'>
+                    Lilian Tjong,
                 </span>{' '}
                 dan{' '}
                 <span className='font-semibold text-blue-500'>
-                    Lilian Tjong
+                    Mursil Shadruddin Afkar
                 </span>{' '}
                 udah janjian nih mau main ke{' '}
                 <span className='font-semibold text-blue-500'>

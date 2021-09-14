@@ -1,11 +1,14 @@
 import Image from 'next/image';
 
 const imagePaths = [
-    '/medpart_fix/bem.png',
-    '/medpart_fix/logo-hmtt.png',
-    '/medpart_fix/logo-daskom-potrait.png',
-    '/medpart_fix/fisdas-logo.png',
+    '/medpart_fix/ruang-event.png',
+    '/medpart_fix/campus-pedia.png',
     '/medpart_fix/yot-tangerang.png',
+    '/medpart_fix/bem.png',
+    '/medpart_fix/hmtt.png',
+    '/medpart_fix/hmsi.jpg',
+    '/medpart_fix/daskom.png',
+    '/medpart_fix/fisdas.png',
 ];
 
 export default function MediaPartners() {
