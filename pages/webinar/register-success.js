@@ -61,7 +61,14 @@ export default function registerSuccess() {
                         pelaksanaan webinar dan link Zoom Virtual Meeting,
                         silahkan bergabung pada grup Whatsapp berikut ini.
                     </p>
-                    <button className='flex justify-center items-center gap-x-2 mt-8 px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none'>
+                    <button
+                        onClick={() =>
+                            window.open(
+                                'https://chat.whatsapp.com/Jw0WbcS5Zk3KdsOBm5Yluc',
+                                '_blank'
+                            )
+                        }
+                        className='flex justify-center items-center gap-x-2 mt-8 px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none'>
                         <FaWhatsapp size={24} />
                         <p className='uppercase text-sm font-semibold'>
                             Gabung Grup Whatsapp
