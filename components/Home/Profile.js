@@ -14,23 +14,48 @@ export default function Profile() {
                     About Us
                 </h1>
                 <p className=''>
-                    Image Processing & Computer Vision Laboratory (IMV Lab) is a
-                    research laboratory under the umbrella of Information &
-                    Signal Processing expertise group in Telecommunication
-                    Engineering major at Telkom University. In 2021-2022, IMV
-                    Lab targeted its research on Image Processing and Computer
-                    Vision especially with integration to the upcoming 5G
-                    Network Technology at the National (Indonesia) scale.
+                    Image Processing & Vision Laboratory (IMV Lab) is a research
+                    laboratory under the umbrella of Information & Signal
+                    Processing expertise group in Telecommunication Engineering
+                    major at Telkom University. In 2021-2022, IMV Lab targeted
+                    its research on Image Processing and Computer Vision
+                    especially with integration to the upcoming 5G Network
+                    Technology at the National (Indonesia) scale.
                 </p>
                 <div className='flex justify-center md:justify-start gap-8 mt-8 mb-8 md:mb-0 text-gray-400'>
-                    <RiLineFill size={32} className='hover:text-green-500' />
-                    <RiInstagramFill
-                        size={32}
-                        className='hover:text-pink-500'
-                    />
-                    <RiYoutubeFill size={32} className='hover:text-red-600' />
-                    <RiLinkedinFill size={32} className='hover:text-blue-700' />
-                    <MdEmail size={32} className='hover:text-yellow-500' />
+                    <a
+                        href='https://line.me/R/ti/p/@uyy9001n'
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <RiLineFill
+                            size={32}
+                            className='hover:text-green-500'
+                        />
+                    </a>
+                    <a
+                        href='https://www.instagram.com/imv.laboratory/'
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <RiInstagramFill
+                            size={32}
+                            className='hover:text-pink-500'
+                        />
+                    </a>
+                    <a
+                        href='https://www.linkedin.com/company/imv-laboratory/'
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <RiLinkedinFill
+                            size={32}
+                            className='hover:text-blue-700'
+                        />
+                    </a>
+                    <a
+                        href='mailto: imvlab@telkomuniversity.ac.id'
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <MdEmail size={32} className='hover:text-yellow-500' />
+                    </a>
                 </div>
             </div>
             <div className='h-full w-full mb-8'>
