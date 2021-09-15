@@ -3,6 +3,7 @@ import Image from 'next/image';
 const imagePaths = [
     '/sponsor_fix/telu.png',
     '/sponsor_fix/kedaireka.png',
+    '/sponsor_fix/kampus-merdeka.jpeg',
     '/sponsor_fix/liveid.png',
     '/sponsor_fix/fte.png',
     '/sponsor_fix/acreative.png',
