@@ -61,19 +61,35 @@ export default function registerSuccess() {
                         pelaksanaan webinar dan link Zoom Virtual Meeting,
                         silahkan bergabung pada grup Whatsapp berikut ini.
                     </p>
-                    <button
-                        onClick={() =>
-                            window.open(
-                                'https://chat.whatsapp.com/Jw0WbcS5Zk3KdsOBm5Yluc',
-                                '_blank'
-                            )
-                        }
-                        className='flex justify-center items-center gap-x-2 mt-8 px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none'>
-                        <FaWhatsapp size={24} />
-                        <p className='uppercase text-sm font-semibold'>
-                            Gabung Grup Whatsapp
-                        </p>
-                    </button>
+                    <div className='flex flex-col justify-center items-center mt-8 gap-4'>
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    'https://chat.whatsapp.com/Jw0WbcS5Zk3KdsOBm5Yluc',
+                                    '_blank'
+                                )
+                            }
+                            className='flex justify-center items-center gap-x-2 w-full px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none disabled:bg-gray-500'
+                            disabled>
+                            <FaWhatsapp size={24} />
+                            <p className='uppercase text-sm font-semibold'>
+                                Gabung Grup Whatsapp 1 {'(penuh)'}
+                            </p>
+                        </button>
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    'https://chat.whatsapp.com/KKeyCujcAcx5U8XloKjEVv',
+                                    '_blank'
+                                )
+                            }
+                            className='flex justify-center items-center gap-x-2 w-full px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none disabled:bg-gray-500'>
+                            <FaWhatsapp size={24} />
+                            <p className='uppercase text-sm font-semibold'>
+                                Gabung Grup Whatsapp 2
+                            </p>
+                        </button>
+                    </div>
                     <p className='text-sm mt-8'>
                         ©2021 IMV Laboratory | Bandung, Indonesia 🇮🇩
                     </p>
