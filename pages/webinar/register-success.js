@@ -83,10 +83,24 @@ export default function registerSuccess() {
                                     '_blank'
                                 )
                             }
+                            className='flex justify-center items-center gap-x-2 w-full px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none disabled:bg-gray-500'
+                            disabled>
+                            <FaWhatsapp size={24} />
+                            <p className='uppercase text-sm font-semibold'>
+                                Gabung Grup Whatsapp 2 {'(penuh)'}
+                            </p>
+                        </button>
+                                                <button
+                            onClick={() =>
+                                window.open(
+                                    'https://chat.whatsapp.com/HW13nBBTt4OJAZW2d4PGWI',
+                                    '_blank'
+                                )
+                            }
                             className='flex justify-center items-center gap-x-2 w-full px-8 h-12 rounded-lg bg-green-500 hover:bg-green-700 text-white focus:outline-none disabled:bg-gray-500'>
                             <FaWhatsapp size={24} />
                             <p className='uppercase text-sm font-semibold'>
-                                Gabung Grup Whatsapp 2
+                                Gabung Grup Whatsapp 4
                             </p>
                         </button>
                     </div>
