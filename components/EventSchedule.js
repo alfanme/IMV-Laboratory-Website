@@ -25,12 +25,12 @@ export default function EventSchedule() {
                 <div className='flex items-center gap-x-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500'>
                     <VideoCameraIcon className='w-8 h-8 text-blue-500' />
 
-                    <p className='text-lg'>Zoom Meeting</p>
-                    <button
+                    <p className='text-lg'>Zoom Meeting (pendaftaran ditutup)</p>
+                    {/** <button
                         onClick={() => router.push('#register')}
                         className='px-2 py-1 rounded-md text-sm font-medium uppercase text-white bg-pink-500 focus:outline-none'>
                         Daftar
-                    </button>
+                    </button> **/}
                 </div>
             </div>
         </div>
