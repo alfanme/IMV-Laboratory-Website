@@ -114,7 +114,7 @@ const webinar = () => {
 
             <BenefitWebinar />
 
-            <FormWebinar />
+            {/* <FormWebinar /> */}
 
             <SupportedBy />
 
