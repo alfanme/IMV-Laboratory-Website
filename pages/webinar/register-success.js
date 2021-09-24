@@ -76,6 +76,7 @@ export default function registerSuccess() {
                                 Gabung Grup Whatsapp 1 {'(penuh)'}
                             </p>
                         </button>
+
                         <button
                             onClick={() =>
                                 window.open(
@@ -90,6 +91,7 @@ export default function registerSuccess() {
                                 Gabung Grup Whatsapp 2 {'(penuh)'}
                             </p>
                         </button>
+
                         <button
                             onClick={() =>
                                 window.open(
@@ -104,6 +106,7 @@ export default function registerSuccess() {
                                 Gabung Grup Whatsapp 4 {'(penuh)'}
                             </p>
                         </button>
+
                         <button
                             onClick={() =>
                                 window.open(
