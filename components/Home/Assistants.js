@@ -1,51 +1,13 @@
 import Image from 'next/image';
-import { supabase } from '../../utils/supabaseClient';
-import { useState, useEffect } from 'react';
+import { usePeople } from '../../hooks/usePeople';
+import Loading from '../Loading';
+import { useRouter } from 'next/router';
 
 export default function Assistants() {
-    const [photoURLs, setPhotoURLs] = useState();
+    const router = useRouter();
+    const { data: assistants, isLoading } = usePeople();
 
-    useEffect(async () => {
-        const { data, error } = await supabase
-            .from('profiles')
-            .select('imv_role, photoURL');
-        if (error) console.log(error);
-        if (data) {
-            // console.log('Data in:', data);
-
-            const imvRolesOrder = [
-                'Assistant Coordinator',
-                'Assistant Deputy Coordinator',
-                'Secretary',
-                'Treasurer',
-                'Project Manager Coordiantor',
-                'Project Manager Member',
-                'Creative Coordiantor',
-                'Creative Member',
-                'External Relation Coordiantor',
-                'External Relation Member',
-                'Logistic Coordiantor',
-                'Logistic Member',
-            ];
-
-            let sortedData = [];
-            imvRolesOrder.map(role => {
-                const dataPerRole = data.filter(
-                    d => d.imv_role === role && d.photoURL !== null
-                );
-                // console.log('dataPerRole:', dataPerRole);
-                sortedData = [...sortedData, ...dataPerRole];
-            });
-
-            // console.log('sortedData:', sortedData);
-
-            let urls = [];
-            sortedData.map(({ photoURL }) => urls.push(photoURL));
-
-            setPhotoURLs(urls);
-            // console.log('photoURLs:', photoURLs);
-        }
-    }, []);
+    if (isLoading) return <Loading />;
 
     return (
         <div className='p-4 md:p-8 pb-12 mb-8'>
@@ -53,15 +15,21 @@ export default function Assistants() {
                 Assistants In-Charge
             </h1>
             <div className='flex flex-wrap justify-center gap-x-4 gap-y-8 place-items-center'>
-                {photoURLs?.map((photoURL, idx) => (
-                    <Image
-                        src={photoURL}
-                        width={100}
-                        height={100}
-                        objectFit='cover'
-                        className='rounded-full pointer-events-none	'
+                {assistants?.map((assistant, idx) => (
+                    <div
+                        onClick={() =>
+                            router.push(`/people/${assistant.user_id}`)
+                        }
                         key={idx}
-                    />
+                        className='cursor-pointer'>
+                        <Image
+                            src={assistant.photoURL}
+                            width={100}
+                            height={100}
+                            objectFit='cover'
+                            className='rounded-full pointer-events-none'
+                        />
+                    </div>
                 ))}
             </div>
         </div>
