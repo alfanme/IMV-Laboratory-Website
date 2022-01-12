@@ -64,7 +64,10 @@ export default function Header() {
                     </ul>
                 </nav> */}
                 <button
-                    onClick={() => router.push('/webinar')}
+                    onClick={() =>
+                        (document.location.href =
+                            'https://webinar.imvlaboratory.com')
+                    }
                     className='flex items-center ml-auto md:ml-16 px-4 h-10 rounded-lg bg-blue-500 text-white hover:bg-blue-700 focus:outline-none'>
                     <VideoCameraIcon className='w-6 h-6' />
                     <p className='ml-2 uppercase text-sm font-medium tracking-wide'>
