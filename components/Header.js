@@ -12,7 +12,7 @@ export default function Header() {
     return (
         <header className='sticky top-0 md:-top-12 z-50 flex justify-between items-center h-20 md:h-32 px-4 md:px-8 bg-white border-b border-gray-200'>
             <div className='sticky top-0 flex md:justify-between items-center h-20 w-full'>
-                {/* <button
+                <button
                     onClick={() => setShowMenu(prev => !prev)}
                     className='focus:outline-none block mr-4 md:hidden'>
                     {showMenu ? (
@@ -20,7 +20,7 @@ export default function Header() {
                     ) : (
                         <MenuIcon className='w-8 h-8' />
                     )}
-                </button> */}
+                </button>
                 <Image
                     src={Logo}
                     width={42}
@@ -31,7 +31,7 @@ export default function Header() {
                 <h1 className='hidden md:block mr-auto ml-4 text-lg font-medium tracking-wider uppercase'>
                     IMV Laboratory
                 </h1>
-                {/* <nav>
+                <nav>
                     <ul
                         className={`fixed top-20 left-0 bottom-0 ${
                             showMenu ? 'translate-x-0' : '-translate-x-full'
@@ -42,27 +42,22 @@ export default function Header() {
                             </Link>
                         </li>
                         <li onClick={() => setShowMenu(prev => !prev)}>
+                            <Link href='/people'>
+                                <a>People</a>
+                            </Link>
+                        </li>
+                        <li onClick={() => setShowMenu(prev => !prev)}>
+                            <Link href='/'>
+                                <a>Research & Publication</a>
+                            </Link>
+                        </li>
+                        <li onClick={() => setShowMenu(prev => !prev)}>
                             <Link href='/'>
                                 <a>Blog</a>
                             </Link>
                         </li>
-                        <li onClick={() => setShowMenu(prev => !prev)}>
-                            <Link href='/'>
-                                <a>About</a>
-                            </Link>
-                        </li>
-                        <li onClick={() => setShowMenu(prev => !prev)}>
-                            <Link href='/'>
-                                <a>Assistant</a>
-                            </Link>
-                        </li>
-                        <li onClick={() => setShowMenu(prev => !prev)}>
-                            <Link href='/'>
-                                <a>Research</a>
-                            </Link>
-                        </li>
                     </ul>
-                </nav> */}
+                </nav>
                 <button
                     onClick={() =>
                         (document.location.href =
